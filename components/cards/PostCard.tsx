@@ -13,58 +13,48 @@ import {
 import { Label } from "@radix-ui/react-label";
 import { Input } from "../ui/input";
 
-export function PostCard({ 
+export async function PostCard({ 
     userId = 0, 
     id = 0, 
-    title = "hello world", 
+    title = "សួស្តី Class", 
     body = "Default CardDescription"
 }: PostResponse) {
+
   return (
     <>
-      <Card className="w-full max-w-sm">
-        <CardHeader>
-          <CardTitle>Login to your account</CardTitle>
+      <Card
+  className="
+    w-full max-w-sm
+    rounded-xl
+    border border-slate-200
+    bg-white
+    shadow-sm
+    transition-all
+    duration-300
+    hover:shadow-lg
+    hover:-translate-y-1
+    hover:border-blue-400
+  "
+>
+  <CardHeader className="space-y-2">
+    <CardTitle className="text-lg font-semibold text-slate-800">
+      Login to your account
+    </CardTitle>
 
-          <CardDescription>{title}</CardDescription>
+    <CardDescription className="text-slate-600">
+      {title}
+    </CardDescription>
 
-          <CardDescription>{body}</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form>
-            <div className="flex flex-col gap-6">
-              <div className="grid gap-2">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="m@example.com"
-                  required
-                />
-              </div>
-              <div className="grid gap-2">
-                <div className="flex items-center">
-                  <Label htmlFor="password">Password</Label>
-                  <a
-                    href="#"
-                    className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-                  >
-                    Forgot your password?
-                  </a>
-                </div>
-                <Input id="password" type="password" required />
-              </div>
-            </div>
-          </form>
-        </CardContent>
-        <CardFooter className="flex-col gap-2">
-          <Button type="submit" className="w-full">
-            Login
-          </Button>
-          <Button variant="outline" className="w-full">
-            Login with Google
-          </Button>
-        </CardFooter>
-      </Card>
+    <CardDescription className="text-slate-500 line-clamp-3">
+      {body}
+    </CardDescription>
+
+    <CardDescription className="text-sm text-blue-600 font-medium">
+      {id} | {userId}
+    </CardDescription>
+  </CardHeader>
+</Card>
+
     </>
   );
 }
