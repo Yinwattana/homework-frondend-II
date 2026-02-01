@@ -6,6 +6,7 @@ import Dashboard from "./dashboard/page";
 import SkeletonCard from "@/components/cards/SkeletonCard";
 import LoginForm from "@/components/cards/login-form";
 import RegisterForm from "@/components/cards/register-form";
+import { Product_form } from "@/components/forms/product-form";
 
 export default function Home() {
   return (
@@ -18,7 +19,9 @@ export default function Home() {
 
       <div className="flex justify-center">
         {/* <LoginForm/> */}
-        <RegisterForm/>
+        {/* <RegisterForm/> */}
+       
+        <Product_form/>
       </div>
       
     </main>

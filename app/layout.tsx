@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SkeletonCard from "@/components/cards/SkeletonCard";
 import { Suspense } from "react";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({
       >
         <Suspense fallback={<SkeletonCard/>}>
         {children}
+        <Toaster/>
         </Suspense>
       </body>
     </html>
